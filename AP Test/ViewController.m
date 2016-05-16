@@ -9,6 +9,7 @@
 #import "ViewController.h"
 
 @interface ViewController ()
+@property (weak, nonatomic) IBOutlet UIImageView *colorImageView;
 
 @end
 
@@ -16,12 +17,20 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    _colorImageView.backgroundColor = [UIColor blueColor];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)changeImageColor:(UIButton *)sender {
+    
+    if (_colorImageView.backgroundColor == [UIColor blueColor]) {
+        _colorImageView.backgroundColor = [UIColor orangeColor];
+    } else {
+        _colorImageView.backgroundColor = [UIColor blueColor];
+    }
 }
 
 @end
